@@ -7,7 +7,7 @@ const app = new Hono();
 
 app.get('/', (c) => c.text('Hello Deno!'));
 
-app.get('/users', async (c) => {
+app.get('/api/users', async (c) => {
 	const selectOne = await db
 		.select()
 		.from(usersTable)
