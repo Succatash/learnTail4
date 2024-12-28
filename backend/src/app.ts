@@ -1,14 +1,18 @@
 import {Hono} from 'npm:hono';
 import {db} from './db/db.ts';
 import {usersTable} from './db/user/schema.ts';
+import {eq} from 'drizzle-orm';
 
 const app = new Hono();
 
 app.get('/', (c) => c.text('Hello Deno!'));
 
 app.get('/users', async (c) => {
-	const allUsers = await db.select().from(usersTable);
-	return c.json(allUsers);
+	const selectOne = await db
+		.select()
+		.from(usersTable)
+		.where(eq(usersTable.id, 1));
+	return c.json(selectOne);
 });
 
 app.post('/users', async (c) => {
