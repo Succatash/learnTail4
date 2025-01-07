@@ -1,6 +1,0 @@
-{
-	"dependencies": {
-		"drizzle-orm": "^0.38.3",
-		"drizzle-seed": "^0.2.1"
-	}
-}
