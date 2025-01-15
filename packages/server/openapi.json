@@ -1,0 +1,115 @@
+{
+	"openapi": "3.0.3",
+	"info": {
+		"title": "HasbaraCMS API",
+		"version": "0.0.1",
+		"description": "A basic API to demonstrate Scalar integration",
+		"path": "/docs"
+	},
+	"tags": [
+		{
+			"name": "users",
+			"description": "User management operations"
+		}
+	],
+	"paths": {
+		"/user": {
+			"post": {
+				"summary": "Create a new user",
+				"tags": ["users"],
+				"operationId": "createUser",
+				"requestBody": {
+					"required": true,
+					"description": "Add a new user to the system",
+					"operationId": "user/create",
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"id": {
+										"type": "string",
+										"format": "uuid"
+									},
+									"name": {
+										"type": "string"
+									},
+									"email": {
+										"type": "string",
+										"format": "email"
+									},
+									"password": {
+										"type": "string"
+									}
+								}
+							},
+							"example": {
+								"name": "matthew",
+								"email": "example@email.com",
+								"password": "Password234"
+							}
+						}
+					}
+				},
+				"responses": {
+					"201": {
+						"description": "User created successfully",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"id": {
+											"type": "string",
+											"format": "uuid"
+										},
+
+										"name": {
+											"type": "string"
+										},
+
+										"email": {
+											"type": "string",
+											"format": "email",
+											"file": "unique"
+										},
+										"password": {
+											"type": "string"
+										}
+									}
+								},
+								"example": {
+									"id": "123e4567-e89b-12d3-a456-426614174000",
+									"name": "micheal jackson",
+									"email": "example@email.com",
+									"password": "Ex@mple2PASS!@Sfn0"
+								},
+								"examples": {
+									"successful-creation": {
+										"summary": "Successfully created user",
+										"description": "Example of a successful user creation response",
+										"value": {
+											"id": "123e4567-e89b-12d3-a456-426614174000",
+											"name": "micheal jackson",
+											"email": "example@email.com",
+											"password": "Ex@mple2PASS!@Sfn0"
+										}
+									}
+								}
+							}
+						}
+					},
+					"422": {
+						"description": "Validation Errors"
+					}
+				}
+			},
+			"get": {
+				"summary": "Create a new user",
+				"tags": ["users"],
+				"operationId": "createUser",
+				"responses": {}
+			}
+		}
+	}
+}

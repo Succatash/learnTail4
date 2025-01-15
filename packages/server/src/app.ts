@@ -1,23 +1,10 @@
-import {rootRouter} from './routes/root.route.ts';
 import createApp from '@/lib/create-app.ts';
-import configureOpenAPI from '@/lib/configure-open-api.ts';
-import user from '@/routes/user/user.index.ts';
+import {user} from '@/routes/user/user.routes.ts';
+import {openApi} from '@/routes/user/create-open-api.ts';
 
 const app = createApp();
 
-configureOpenAPI(app);
-
-//Add these to a root router
-
-app.get('/err', () => {
-	throw Error('This is an error');
-});
-
-const routes = [rootRouter, user] as const;
-
-app.get('/err', () => {
-	throw Error('This is an error');
-});
+const routes = [user, openApi] as const;
 
 routes.forEach((route) => {
 	return app.route('/', route);
