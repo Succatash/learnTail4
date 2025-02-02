@@ -1,9 +1,6 @@
 // @deno-types="@types/react"
-import React, { useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <img src="/vite-deno.svg" alt="Vite with Deno" />
@@ -13,8 +10,8 @@ function App() {
       </h1>
 
       <button
-        className="max-w-30 bg-rose-500! 1 border-green-400! border-2!
-      m-auto w-full"
+        className="max-w-30 m-auto w-full
+      border-2 border-green-400 bg-rose-500"
       >
         hello
       </button>

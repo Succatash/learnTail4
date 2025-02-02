@@ -1,9 +1,7 @@
 @import "tailwindcss";
-@layer theme, base, components, utilities;
 
 @import "tailwindcss/theme.css";
 @import "tailwindcss/preflight.css";
-@import "tailwindcss/utilities.css";
 @tailwind utilities;
 
 @plugin "tailwindcss-animate";
