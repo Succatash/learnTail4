@@ -1,25 +1,37 @@
 {
   "tasks": {
-    "dev": "deno run -A --node-modules-dir npm:vite",
+    "dev": "deno run -A --node-modules-dir npm:vite && tsr generate ",
     "build": "deno run -A --node-modules-dir npm:vite build",
     "preview": "deno run -A --node-modules-dir npm:vite preview",
     "serve": "deno run --allow-net --allow-read jsr:@std/http@1/file-server dist/"
   },
   "compilerOptions": {
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "lib": ["esnext", "deno.ns", "DOM", "DOM.Iterable"],
     "jsx": "react-jsx",
     "jsxImportSource": "react",
     "jsxImportSourceTypes": "@types/react"
   },
   "imports": {
+    "@/": "./src/",
     "@deno/vite-plugin": "npm:@deno/vite-plugin@^1.0.0",
+    "@radix-ui/react-dialog": "npm:@radix-ui/react-dialog@^1.1.5",
+    "@radix-ui/react-separator": "npm:@radix-ui/react-separator@^1.1.1",
+    "@radix-ui/react-slot": "npm:@radix-ui/react-slot@^1.1.1",
+    "@radix-ui/react-tooltip": "npm:@radix-ui/react-tooltip@^1.1.7",
     "@tailwindcss/vite": "npm:@tailwindcss/vite@^4.0.3",
+    "@tanstack/react-router": "npm:@tanstack/react-router@^1.99.0",
+    "@tanstack/router-devtools": "npm:@tanstack/router-devtools@^1.99.0",
+    "@tanstack/router-plugin": "npm:@tanstack/router-plugin@^1.99.0",
     "@types/react": "npm:@types/react@^18.3.12",
     "@types/react-dom": "npm:@types/react-dom@^18.3.1",
     "@vitejs/plugin-react": "npm:@vitejs/plugin-react@^4.3.4",
+    "class-variance-authority": "npm:class-variance-authority@^0.7.1",
+    "clsx": "npm:clsx@^2.1.1",
+    "lucide-react": "npm:lucide-react@^0.474.0",
     "prettier-plugin-tailwindcss": "npm:prettier-plugin-tailwindcss@^0.6.11",
     "react": "npm:react@^18.3.1",
     "react-dom": "npm:react-dom@^18.3.1",
+    "tailwind-merge": "npm:tailwind-merge@^3.0.1",
     "tailwindcss": "npm:tailwindcss@^4.0.3",
     "tailwindcss-animate": "npm:tailwindcss-animate@^1.0.7",
     "vite": "npm:vite@^6.0.1"
