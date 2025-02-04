@@ -1,7 +1,8 @@
 import * as React from "react"
 import * as TooltipPrimitive from "@radix-ui/react-tooltip"
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils.ts"
+
 
 const TooltipProvider = TooltipPrimitive.Provider
 
@@ -12,7 +13,7 @@ const TooltipTrigger = TooltipPrimitive.Trigger
 const TooltipContent = React.forwardRef<
   React.ElementRef<typeof TooltipPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>
->(({ className, sideOffset = 4, ...props }, ref) => (
+>(({ className, sideOffset = 4, ...props }: any, ref: React.LegacyRef<HTMLDivElement> | undefined) => (
   <TooltipPrimitive.Content
     ref={ref}
     sideOffset={sideOffset}

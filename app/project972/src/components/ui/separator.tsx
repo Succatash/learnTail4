@@ -1,15 +1,17 @@
+// deno-lint-ignore-file no-explicit-any
 import * as React from "react"
 import * as SeparatorPrimitive from "@radix-ui/react-separator"
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils.ts"
+
 
 const Separator = React.forwardRef<
   React.ElementRef<typeof SeparatorPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root>
 >(
   (
-    { className, orientation = "horizontal", decorative = true, ...props },
-    ref
+    { className, orientation = "horizontal", decorative = true, ...props }: any,
+    ref: React.LegacyRef<HTMLDivElement> | undefined
   ) => (
     <SeparatorPrimitive.Root
       ref={ref}

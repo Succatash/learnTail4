@@ -1,9 +1,11 @@
 import * as React from "react"
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils.ts"
+
 
 const Input = React.forwardRef<HTMLInputElement, React.ComponentProps<"input">>(
-  ({ className, type, ...props }, ref) => {
+  // deno-lint-ignore no-explicit-any
+  ({ className, type, ...props }: any, ref: React.LegacyRef<HTMLInputElement> | undefined) => {
     return (
       <input
         type={type}

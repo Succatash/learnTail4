@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar.tsx"
+import { SidebarProvider, SidebarTrigger,SidebarRail } from "@/components/ui/sidebar.tsx"
 import { AppSidebar } from "@/components/app-sidebar.tsx"
  
 
@@ -10,9 +10,10 @@ export const Route = createFileRoute("/")({
 function Index({ children }: { children: React.ReactNode }) {
   return (
     <SidebarProvider >
-        <SidebarTrigger className='bg-red-700 ml-40' />
       <AppSidebar />
       <main>
+        <SidebarTrigger  className='' />
+        {/* <SidebarRail /> */}
         {children}
       </main>
     </SidebarProvider>
