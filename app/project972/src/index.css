@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 @plugin "tailwindcss-animate";
 
 @variant dark (&:where(.dark, .dark *));
@@ -29,14 +30,14 @@
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
-  --sidebar-background: 0 0% 98%;
-  --sidebar-foreground: 240 5.3% 26.1%;
-  --sidebar-primary: 240 5.9% 10%;
-  --sidebar-primary-foreground: 0 0% 98%;
-  --sidebar-accent: 240 4.8% 95.9%;
-  --sidebar-accent-foreground: 240 5.9% 10%;
-  --sidebar-border: 220 13% 91%;
-  --sidebar-ring: 217.2 91.2% 59.8%;
+  --color-sidebar-background:oklch(98.48% 0 0);
+  --color-sidebar-foreground: oklch(37.05% 0.012 285.8);
+  --color-sidebar-primary: oklch(21.03% 0.0059 285.88);
+  --color-sidebar-primary-foreground: oklch(98.48% 0 0);
+  --color-sidebar-accent: oklch(96.76% 0.0013 286.38);
+  --color-sidebar-accent-foreground: oklch(21.03% 0.0059 285.88);
+  --color-sidebar-border: oklch(92.78% 0.0058 264.53);
+  --color-sidebar-ring: oklch(62.32% 0.1879 259.8);
 }
 
 @layer theme {

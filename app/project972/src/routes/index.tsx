@@ -1,13 +1,20 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar.tsx"
+import { AppSidebar } from "@/components/app-sidebar.tsx"
+ 
 
 export const Route = createFileRoute("/")({
-  component: Index,
+  component: Index
 });
 
-function Index() {
+function Index({ children }: { children: React.ReactNode }) {
   return (
-    <div className="bg-destructive p-2">
-      <h3>Welcome Home!</h3>
-    </div>
-  );
+    <SidebarProvider >
+        <SidebarTrigger className='bg-red-700 ml-40' />
+      <AppSidebar />
+      <main>
+        {children}
+      </main>
+    </SidebarProvider>
+  )
 }
